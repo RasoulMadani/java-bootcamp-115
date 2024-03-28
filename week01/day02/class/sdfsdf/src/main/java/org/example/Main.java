@@ -10,7 +10,7 @@ public class Main {
             counter++;
             if(counter%4 == 0){
                 bakhsh++;
-                System.out.println(counter + " ____ " + bakhsh);
+                System.out.println(counter + " -----> " + bakhsh);
             }
         }
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
