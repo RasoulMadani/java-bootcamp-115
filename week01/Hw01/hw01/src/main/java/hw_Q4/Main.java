@@ -1,0 +1,19 @@
+package hw_Q4;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner intput = new Scanner(System.in);
+        System.out. println("Enter n:");
+        int n = intput.nextInt();
+        for (int  i = 0; i <= n; i++) {
+            for (int j = i; j < n; j++)
+                System.out.print("  ");
+            for (int  j = 0;  j < i; j++) {
+                System.out. print(" *  ");
+            }
+            System.out. println("");
+        }
+    }
+}
