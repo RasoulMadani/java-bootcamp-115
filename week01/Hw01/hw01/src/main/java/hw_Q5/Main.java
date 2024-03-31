@@ -8,10 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] numbers = new int[5];
-        int index = 0;
-        int differentMax = 0;
-        int differentMin = 0;
-        int differentNew = 0;
+        int index = 0,differentMax = 0,differentMin = 0,differentNew = 0;
         while (true) {
             System.out.println("Please enter number");
             if (numbers[numbers.length - 1] != 0) {
@@ -35,7 +32,7 @@ public class Main {
                         differentMin = differentNew;
                     }
                 } else if (index - 1 >= 0) {
-                    differentMax = numbers[index - 1] - numbers[index];
+                    differentNew = numbers[index - 1] - numbers[index];
                     if (differentNew > differentMax) {
                         differentMax = differentNew;
                     }
