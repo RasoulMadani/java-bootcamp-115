@@ -3,7 +3,7 @@ package q_01;
 import java.util.Random;
 import java.util.Scanner;
 
-public class main3 {
+public class GameOfGuessNumbers {
     static Scanner scanner = new Scanner(System.in);
     static int number;
     static Random random = new Random();
