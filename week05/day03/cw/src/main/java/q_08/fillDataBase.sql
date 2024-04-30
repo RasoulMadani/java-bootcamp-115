@@ -11,15 +11,6 @@ INSERT INTO prof (pfname, degree, office) VALUES
     ('Sarah Wilson', 'Ph.D.', 'Office I'),
     ('Chris Anderson', 'M.Sc.', 'Office J');
 
-create table if not exists clg
-(
-    id   serial,
-    clgname varchar,
-    city varchar,
-    primary key (id),
-    prof_id int,
-    constraint profclg_FK foreign key (prof_id) references prof(id)
-);
 
 -- Insert data into university_management.student table
 INSERT INTO students (name, city, clg_id) VALUES
