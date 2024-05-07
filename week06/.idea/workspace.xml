@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e17605ba-58a1-4473-8513-dbe824f062e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../week04/.idea/week04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../week04/hw04/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../week04/hw04/.idea/hw04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../week04/hw04/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../week04/hw04/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../week04/hw04/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day01/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day01/.idea/day01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week04/Java_CW_W04_Thursday.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../week04/hw04/Java_CW_W04_Thursday.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week05/day03/cw/src/main/java/1.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2g80BEEM44WUdRTEDO1tL4uCyx2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e17605ba-58a1-4473-8513-dbe824f062e8" name="Changes" comment="" />
+      <created>1715063760364</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715063760364</updated>
+    </task>
+    <servers />
+  </component>
+</project>
