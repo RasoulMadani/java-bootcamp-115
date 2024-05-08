@@ -1,6 +1,9 @@
 package q02;
 
+import java.time.Duration;
 import java.time.LocalDate;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Book {
     int id;
@@ -9,9 +12,8 @@ public class Book {
     LocalDate year_published;
     Publisher publisher;
     Writer writer;
-    private  boolean isBorrowed = false;
+    private boolean isBorrowed = false;
     LocalDate date_borrowed;
-
 
 
     public Book(int id, String name, String subject, LocalDate year_published, Publisher publisher, Writer writer) {
@@ -22,6 +24,7 @@ public class Book {
         this.publisher = publisher;
         this.writer = writer;
     }
+
     public LocalDate getDate_borrowed() {
         return date_borrowed;
     }
@@ -29,6 +32,14 @@ public class Book {
     public void setDate_borrowed(LocalDate date_borrowed) {
         this.date_borrowed = date_borrowed;
     }
+
+    public double penalty() {
+        double daysBetween = DAYS.between( date_borrowed, LocalDate.now());
+        System.out.println(daysBetween);
+        double penalty = Math.round((daysBetween - 7) * 1000);
+        return penalty > 0 ? penalty : 0;
+    }
+
     public int getId() {
         return id;
     }

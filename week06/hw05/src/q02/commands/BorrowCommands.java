@@ -17,14 +17,20 @@ public class BorrowCommands {
     }
 
     public void runCommand() {
-        System.out.println("Enter \"create\" or \"add\" or \"remove\" ");
+        System.out.println("Enter \"create\" or \"add\" or \"remove\" or \"canGetBook\" ");
         String command = scanner.next();
         switch (command) {
             case "create" -> {
                 createBorrow();
             }
-            case "add" ->{
+            case "add" -> {
                 addItems();
+            }
+            case "remove" -> {
+                removeItem();
+            }
+            case "canGetBook" -> {
+                canGetBook();
             }
 
         }
@@ -39,20 +45,72 @@ public class BorrowCommands {
         library.addBorrow(borrow);
         System.out.println(library);
     }
-    public void addItems(){
+
+    public void addItems() {
         System.out.println("Enter your borrow id : ");
         int borrowId = scanner.nextInt();
         Borrow borrow = library.getBorrow(borrowId);
         System.out.println("Enter book id : ");
         int bookId = scanner.nextInt();
         Book book = library.getBook(bookId);
-        if (!book.isBorrowed()){
+        if (!book.isBorrowed()) {
             book.setBorrowed(true);
-            book.setDate_borrowed(LocalDate.now());
+            book.setDate_borrowed(LocalDate.now().minusDays(10));
             borrow.addItem(book);
             System.out.println(library);
-        }else{
+        } else {
             System.out.println("book is borrowed");
+        }
+    }
+
+    public void removeItem() {
+        System.out.println("Enter your Borrow Id : ");
+        int borrowId = scanner.nextInt();
+        Borrow borrow = library.getBorrow(borrowId);
+        System.out.println("Enter your Book Id : ");
+        int bookId = scanner.nextInt();
+        Book[] items = borrow.getItems();
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null) {
+                if (items[i].getId() == bookId) {
+                    double penalty = items[i].penalty();
+                    System.out.println("your penalty is : " + penalty);
+                    items[i] = null;
+                }
+            }
+        }
+
+
+    }
+
+    public void canGetBook() {
+        System.out.println("Enter book name :");
+        String name = scanner.next();
+        Book[] books = library.getBooks();
+        System.out.println("Enter member id : ");
+        int memberId = scanner.nextInt();
+        Borrow[] borrows = library.getBorrows();
+        boolean countBorrow = false;
+        for (Borrow borrow1 : borrows) {
+            if (borrow1 != null) {
+                if (borrow1.getMember().getId() == memberId) {
+                    if (borrow1.getIndexItems() < 1) {
+                        countBorrow = true;
+                    }
+
+                }
+            }
+        }
+        boolean availableBook = false;
+        for (Book book : books) {
+            if (book != null) {
+                if (book.getName().equals(name) && !book.isBorrowed()) {
+                    availableBook = true;
+                }
+            }
+        }
+        if (countBorrow && availableBook) {
+            System.out.println("you can get this book .");
         }
     }
 

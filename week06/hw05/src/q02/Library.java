@@ -32,6 +32,9 @@ public class Library {
         }
         return null;
     }
+    public Borrow[] getBorrows(){
+        return borrows;
+    }
     public void addMember(Member member){
         this.members[indexMembers] = member;
         indexMembers++;
