@@ -1,15 +1,12 @@
-package q02;
+package librarySystem;
 
-public class Member {
-    int id;
-    String name;
+public class Publisher {
+    private int id;
+    private String name ;
 
-    Address address;
-
-    public Member(int id, String name, Address address) {
+    public Publisher(int id, String name) {
         this.id = id;
         this.name = name;
-        this.address = address;
     }
 
     public int getId() {
@@ -28,20 +25,11 @@ public class Member {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     @Override
     public String toString() {
-        return "Member{" +
+        return "Publisher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", address=" + address +
                 '}';
     }
 }

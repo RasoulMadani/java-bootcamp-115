@@ -1,4 +1,4 @@
-package q01;
+package bankSystem;
 
 public class Branch {
     Customer[] customers = new Customer[10];

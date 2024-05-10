@@ -1,10 +1,9 @@
-package q02.commands;
+package librarySystem.commands;
 
 
-import q02.*;
-import q02.publicCalsses.IdGenerator;
+import librarySystem.*;
+import librarySystem.publicCalsses.IdGenerator;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Scanner;
 

@@ -1,6 +1,5 @@
-package q02;
+package librarySystem;
 
-import java.time.Duration;
 import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.DAYS;

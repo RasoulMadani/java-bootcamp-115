@@ -1,4 +1,4 @@
-package q02.publicCalsses;
+package librarySystem.publicCalsses;
 
 public class IdGenerator {
     public int generator(){

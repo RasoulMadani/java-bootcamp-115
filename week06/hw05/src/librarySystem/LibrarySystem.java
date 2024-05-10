@@ -1,14 +1,10 @@
-package q02;
+package librarySystem;
 
-import q02.commands.AddCommands;
-import q02.commands.BorrowCommands;
-import q02.commands.SearchCommands;
+import librarySystem.commands.AddCommands;
+import librarySystem.commands.BorrowCommands;
+import librarySystem.commands.SearchCommands;
 
-import java.time.Duration;
-import java.time.LocalDate;
 import java.util.Scanner;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 public class LibrarySystem {
     public static Scanner scanner = new Scanner(System.in);

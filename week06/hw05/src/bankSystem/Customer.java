@@ -1,4 +1,4 @@
-package q01;
+package bankSystem;
 
 public class Customer {
     private String name;

@@ -1,10 +1,8 @@
-package q02.commands;
+package librarySystem.commands;
 
 
-import q02.*;
-import q02.publicCalsses.IdGenerator;
+import librarySystem.*;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class SearchCommands {
