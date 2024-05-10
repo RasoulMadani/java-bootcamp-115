@@ -1,6 +1,7 @@
 package q01;
 
 public class Branch {
+    Customer[] customers = new Customer[10];
     private int code;
     private String city;
     private int level;

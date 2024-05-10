@@ -1,8 +1,8 @@
 package q02;
 
 public class Publisher {
-    int id;
-    String name ;
+    private int id;
+    private String name ;
 
     public Publisher(int id, String name) {
         this.id = id;

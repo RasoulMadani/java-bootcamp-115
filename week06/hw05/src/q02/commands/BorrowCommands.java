@@ -96,6 +96,7 @@ public class BorrowCommands {
                 if (borrow1.getMember().getId() == memberId) {
                     if (borrow1.getIndexItems() < 1) {
                         countBorrow = true;
+                        break;
                     }
 
                 }
@@ -106,6 +107,7 @@ public class BorrowCommands {
             if (book != null) {
                 if (book.getName().equals(name) && !book.isBorrowed()) {
                     availableBook = true;
+                    break;
                 }
             }
         }

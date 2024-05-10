@@ -9,6 +9,7 @@ public class BankSystem {
         CreditCard creditCard = createCard();
         Account account = createAccount(creditCard);
         Branch branch = new Branch(2, "te", 1);
+//        branch.addCustomer(cu)
         Customer customer = createCustomer(account);
         double credit = customer.getAccount().getCreditCard().getCredit();
         System.out.println("your credit is : " + credit);

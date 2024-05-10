@@ -1,6 +1,7 @@
 package q01;
 
 public class CreditCard {
+
     private String cartNumber;
     private double credit;
 
