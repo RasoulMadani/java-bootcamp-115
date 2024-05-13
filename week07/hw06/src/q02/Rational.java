@@ -68,7 +68,7 @@ public class Rational {
     public String mixedNumber(Rational num) {
         int div = num.getNumerator() / num.getDenominator();
         int reminder = num.getNumerator() % num.getDenominator();
-        return div + "/" + num.getDenominator() + "+" + reminder;
+        return  reminder+ "/" + num.getDenominator() + "+" + div;
     }
 
     public String toString1() {
