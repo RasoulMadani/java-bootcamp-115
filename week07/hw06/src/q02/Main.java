@@ -6,13 +6,13 @@ public class Main   {
     public static void main(String[] args) {
 
         Rational rational = new Rational();
-        rational.simpleFraction(2,5);
+        rational.simpleFraction(2,4);
         System.out.println(rational);
 
         System.out.println("------------------");
 
         Rational rational1 = new Rational();
-        rational1.simpleFraction(1,5);
+        rational1.simpleFraction(16,6);
         System.out.println(rational1);
 
         System.out.println("-----------------------");

@@ -4,13 +4,11 @@ public class User {
     protected String firstName;
     protected String lastName;
     protected String nationality;
-    protected Contract contract;
 
-    public User(String firstName, String lastName, String nationality, Contract contract) {
+    public User(String firstName, String lastName, String nationality) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.nationality = nationality;
-        this.contract = contract;
     }
 
     public String getFirstName() {
@@ -40,14 +38,6 @@ public class User {
         return this;
     }
 
-    public Contract getContract() {
-        return contract;
-    }
-
-    public User setContract(Contract contract) {
-        this.contract = contract;
-        return this;
-    }
 
     @Override
     public String toString() {
@@ -55,7 +45,6 @@ public class User {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", nationality='" + nationality + '\'' +
-                ", contract=" + contract +
                 '}';
     }
 }

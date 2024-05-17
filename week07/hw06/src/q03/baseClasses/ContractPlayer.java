@@ -2,38 +2,24 @@ package q03.baseClasses;
 
 import java.util.Arrays;
 
-public class Contract {
+public class ContractPlayer {
 
     private int baseSalary;
-    private int perDay;
-    private PlaySalary[] playSalaries;
+    private PlaySalary[] playSalaries = new PlaySalary[10];
     private int indexPlaySalary = 0;
 
-    public Contract(int baseSalary) {
-        this.baseSalary = baseSalary;
-        playSalaries = new PlaySalary[10];
-    }
 
-    public Contract(int baseSalary, int perDay) {
+    public ContractPlayer(int baseSalary) {
         this.baseSalary = baseSalary;
-        this.perDay = perDay;
+
     }
 
     public int getBaseSalary() {
         return baseSalary;
     }
 
-    public Contract setBaseSalary(int baseSalary) {
+    public ContractPlayer setBaseSalary(int baseSalary) {
         this.baseSalary = baseSalary;
-        return this;
-    }
-
-    public int getPerDay() {
-        return perDay;
-    }
-
-    public Contract setPerDay(int perDay) {
-        this.perDay = perDay;
         return this;
     }
 
@@ -50,7 +36,6 @@ public class Contract {
     public String toString() {
         return "Contract{" +  "\n" +
                 "baseSalary=" + baseSalary + "\n" +
-                ", perDay=" + perDay + "\n" +
                 ", playSalaries=" + Arrays.toString(playSalaries) + "\n" +
                 ", indexPlaySalary=" + indexPlaySalary + "\n" +
                 '}';

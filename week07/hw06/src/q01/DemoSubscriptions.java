@@ -7,8 +7,8 @@ public class DemoSubscriptions {
     public static void main(String[] args) {
         PhysicalNewspaperSubscription physicalNewspaperSubscription = new PhysicalNewspaperSubscription("rasoul");
         OnlineNewspaperSubscription onlineNewspaperSubscription = new OnlineNewspaperSubscription("hamid");
-        physicalNewspaperSubscription.setAddress("tehran1 ");
-        onlineNewspaperSubscription.setAddress("iran pelake 4 @");
+        physicalNewspaperSubscription.setAddress("tehran ");
+        onlineNewspaperSubscription.setAddress("iran pelake 4 ");
         System.out.println(onlineNewspaperSubscription);
         System.out.println(physicalNewspaperSubscription);
     }

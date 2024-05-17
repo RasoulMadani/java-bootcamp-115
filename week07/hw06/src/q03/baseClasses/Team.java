@@ -5,14 +5,30 @@ import java.util.Arrays;
 public class Team {
     private String name;
     private String lig;
-    private Coach coach;
+    private Coach[] coaches = new Coach[10];
+    private int indexCoaches;
     private Player[] players = new Player[10];
-    int indexPlayer;
+    private int indexPlayer;
 
-    public Team(String name, String lig, Coach coach) {
+    public Team(String name, String lig) {
         this.name = name;
         this.lig = lig;
-        this.coach = coach;
+    }
+
+    public void print_all_salaries() {
+        int salary = 0;
+        System.out.println(this.coaches[0]);
+        for (int i = 0; i < indexCoaches; i++) {
+            if (this.coaches[i] != null) {
+                salary += coaches[i].salaryCalculation();
+            }
+        }
+        for (int i = 0; i < indexPlayer; i++) {
+            if (this.players[i] != null) {
+                salary += players[i].salaryCalculation();
+            }
+        }
+        System.out.println(salary);
     }
 
     public String getName() {
@@ -33,15 +49,6 @@ public class Team {
         return this;
     }
 
-    public Coach getCoach() {
-        return coach;
-    }
-
-    public Team setCoach(Coach coach) {
-        this.coach = coach;
-        return this;
-    }
-
     public Player[] getPlayers() {
         return players;
     }
@@ -51,12 +58,18 @@ public class Team {
         return this;
     }
 
+    public Team addCoach(Coach coach) {
+        coaches[indexCoaches++] = coach;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Team{" +
                 "name='" + name + '\'' +
                 ", lig='" + lig + '\'' +
-                ", coach=" + coach +
+                ", coachs=" + Arrays.toString(coaches) +
+                ", indexCoaches=" + indexCoaches +
                 ", players=" + Arrays.toString(players) +
                 ", indexPlayer=" + indexPlayer +
                 '}';

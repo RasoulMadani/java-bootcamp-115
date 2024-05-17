@@ -1,18 +1,18 @@
 package q03.baseClasses;
 
 public class PlaySalary {
-    int gameId;
+    Game game;
     int salary;
 
-    public PlaySalary(int gameId, int salary) {
-        this.gameId = gameId;
+    public PlaySalary(Game game, int salary) {
+        this.game = game;
         this.salary = salary;
     }
 
     @Override
     public String toString() {
         return "PlaySalary{" +
-                "gameId=" + gameId +
+                "gameId=" + game.getId() +
                 ", salary=" + salary +
                 '}';
     }
