@@ -20,8 +20,7 @@ public class Main {
             System.out.println(resultSet);
             while (resultSet.next()){
                 System.out.println(resultSet.getString("name") );
-                System.out.println(resultSet.getString("name"));
-                System.out.println(resultSet.getString("name"));
+                System.out.println(resultSet.getString("age") );
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

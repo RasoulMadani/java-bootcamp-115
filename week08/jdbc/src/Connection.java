@@ -9,7 +9,6 @@ public class Connection {
             // ساخت اتصال به پایگاه داده
             java.sql.Connection connection =
                     DriverManager.getConnection(
-
                             "jdbc:mysql://sahand.liara.cloud:33333/jdbc",
                             "root",
                             "OtyJennMi0FmHTmxIgbwgwda"
