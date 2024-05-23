@@ -1,9 +1,7 @@
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Connection {
+//    static  final ...
     public static void main(String[] args) {
         try {
             // ساخت اتصال به پایگاه داده
@@ -15,9 +13,13 @@ public class Connection {
                     );
 
               // ساخت استیتمنت
-            Statement statement = connection.createStatement();
+//            Statement statement = connection.createStatement();
+             String query= "SELECT * from student where firstname= ? ";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1,"mohammad");
+//            statement.setInt(); bach دسته ای
             // چاپ اطلاعات
-            ResultSet resultSet = statement.executeQuery("SELECT * from student where firstname='mohammad'");
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 System.out.println(resultSet.getString("firstname"));
                 System.out.println(resultSet.getString("lastname"));
@@ -33,7 +35,7 @@ public class Connection {
 //            System.out.println("updated ...");
 
             // وارد کردن اطلاعات
-//            statement.executeUpdate("insert into student (firstname,lastname,studentid) values ('mohammad','mohammadi',12345)");
+//            statement.executeUpdate("insert into student (firstname,lastname,studentid) values ('mohammad1','mohammadi1',123451)");
 //            System.out.println("inserted ...");
 
 

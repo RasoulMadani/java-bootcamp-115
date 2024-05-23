@@ -44,12 +44,22 @@ public class Sequence {
     }
 
     public void replace(Sequence oldChars, Sequence newChars) {
+        int counter;
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == oldChars.getChars()[0]) {
+                counter = 1;
                 for (int j = 1, k = i + 1; j < oldChars.getChars().length; j++, k++) {
                     if (oldChars.getChars()[j] == chars[k]) {
-                        System.out.println("nist");
+                        counter++;
+                        System.out.println(oldChars.getChars()[j] + " " + counter);
                     }
+                }
+                if (counter == oldChars.getChars().length){
+                    System.out.println("allah");
+                    for (int j = 0,k = i; j < newChars.getChars().length; j++,k++) {
+                        chars[k] = newChars.getChars()[j];
+                    }
+                    System.out.println(chars);
                 }
             }
         }
