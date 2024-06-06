@@ -9,6 +9,7 @@ public class UserService {
     public void addUserToDB(String firstname, String lastname, String username, String password) throws SQLException, ClassNotFoundException {
         User user = new User(firstname, lastname, username, password);
         userRepository.addUserToDatabase(user);
+
     }
 
     public void deleteUser(int id) throws SQLException, ClassNotFoundException {

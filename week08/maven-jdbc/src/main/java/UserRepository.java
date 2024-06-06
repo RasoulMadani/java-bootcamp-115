@@ -15,14 +15,14 @@ public class UserRepository {
         statement.setString(2, user.getLastname());
         statement.setString(3, user.getUsername());
         statement.setString(4, user.getPassword());
-        statement.executeUpdate(query);
-        System.out.println("inserted ...");
+        statement.executeUpdate();
+        System.out.println("inserted .>؟>>>..");
     }
     public void deleteUser(int id) throws SQLException, ClassNotFoundException {
         String query = "delete from users where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
-        statement.executeUpdate(query);
+        statement.executeUpdate();
         System.out.println("deleted ...");
     }
 }

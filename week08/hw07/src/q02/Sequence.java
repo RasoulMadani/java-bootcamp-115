@@ -55,7 +55,6 @@ public class Sequence {
                     }
                 }
                 if (counter == oldChars.getChars().length){
-                    System.out.println("allah");
                     for (int j = 0,k = i; j < newChars.getChars().length; j++,k++) {
                         chars[k] = newChars.getChars()[j];
                     }
