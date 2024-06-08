@@ -72,26 +72,34 @@ public class CardMenu {
     }
 
     private void showAllCards() {
-        System.out.println(Arrays.toString(cardService.getCards(token.getId())));
+
+      BaseEntity[] cards =  cardService.getCards(token.getId());
+      for(BaseEntity b : cards){
+          System.out.println(b);
+      }
     }
 
     private void cardSearchByBankName() {
         System.out.println("Enter Bank name :");
         String name = scanner.next();
         BaseEntity[] cards = cardService.findCardByBankName(name, token.getId());
-        System.out.println(Arrays.toString(cards));
+        for(BaseEntity b : cards){
+            System.out.println(b);
+        }
     }
 
     private void cardSearchByName() {
         System.out.println("Enter Card name :");
         String name = scanner.next();
         BaseEntity[] cards = cardService.findCardByName(name, token.getId());
-        System.out.println(Arrays.toString(cards));
+        for(BaseEntity b : cards){
+            System.out.println(b);
+        }
     }
 
     private void removeCard() {
         System.out.println("select your card id from the list below :");
-        System.out.println(Arrays.toString(cardService.getCards(token.getId())));
+        showAllCards();
         Long cardId = scanner.nextLong();
         boolean deleteCard = cardService.deleteCard(cardId);
         if (deleteCard) {
@@ -114,7 +122,12 @@ public class CardMenu {
             }
         }
         System.out.println("select your bank id from the list below :");
-        System.out.println(Arrays.toString(cardService.getBanks()));
+
+        BaseEntity[] banks = cardService.getBanks();
+        for(BaseEntity b : banks){
+            System.out.println(b);
+        }
+
         Long bankId = scanner.nextLong();
 
         boolean register = cardService.addCard(name, bankId, token.getId());

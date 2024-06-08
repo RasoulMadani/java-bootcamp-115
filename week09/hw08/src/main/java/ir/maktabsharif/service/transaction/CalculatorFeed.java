@@ -3,74 +3,51 @@ package ir.maktabsharif.service.transaction;
 import ir.maktabsharif.enums.TransactionType;
 
 public class CalculatorFeed {
-    double amount;
-    TransactionType type;
-    double feed = 0;
-    int countBatch;
-
-    public CalculatorFeed(double amount, TransactionType type) {
-        this.amount = amount;
-        this.type = type;
+    // TODO singleton is better dan static
+    public static double calculate(double amount, TransactionType type) {
+        return switch (type) {
+            case REQULAR -> calculateRegular(amount);
+            case PAYA -> calculatePaya(amount);
+            case SATNA -> calculateSatna(amount);
+            default -> 0.0;
+        };
     }
 
-    public CalculatorFeed(double amount, TransactionType type, int countBatch) {
-        this.amount = amount;
-        this.type = type;
-        this.countBatch = countBatch;
-    }
-
-    public double calculate() {
-        switch (type) {
-            case REQULAR -> {
-                calculateRegular();
-            }
-            case PAYA -> {
-                calculatePaya();
-            }
-            case SATNA -> {
-                calculateSatna();
-            }
-            case PAYA_BATCH -> {
-                calculatePayaBatch();
-            }
-        }
-        return feed;
-    }
-
-    private void calculatePayaBatch() {
+    public static double calculatePayaBatch(double amount,int countBatch) {
         if (countBatch <= 10) {
-            feed = countBatch * 1200;
+            return countBatch * 1200;
         } else {
-             feed = ((countBatch - 10) * 120) + 12000;
+            return ((countBatch - 10) * 120) + 12000;
         }
     }
 
-    private void calculateSatna() {
+    private static double calculateSatna(double amount) {
         double percentage = amount * 2 / 100;
         if (percentage > 25000) {
-            feed = 25000;
+            return  25000;
         } else {
-            feed = percentage;
+            return percentage;
         }
     }
 
-    private void calculatePaya() {
+    private static double calculatePaya(double amount) {
         double percentage = amount * 1 / 100;
         if (percentage < 240) {
-            feed = 240;
+            return 240;
         }
         if (percentage > 3000) {
-            feed = 3000;
+            return 3000;
         }
+        return 0;
     }
 
-    private void calculateRegular() {
+    private static double calculateRegular(double amount) {
         if (amount < 10000000) {
-            feed = 500;
+            return 500;
         } else {
             double amount1 = amount - 10000000;
             double countM = Math.floor(amount1 / 1000000);
-            feed = countM * 100 + 500;
+            return countM * 100 + 500;
         }
     }
 }

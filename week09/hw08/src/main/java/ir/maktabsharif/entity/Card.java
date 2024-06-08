@@ -8,6 +8,7 @@ public class Card extends BaseEntity{
     private String card_number;
     private Long bank_id;
     private Long user_id;
+    private Account account;
     private Random random = new Random();
 
     public Card(String name, Long bank_id, Long user_id) {
@@ -15,6 +16,13 @@ public class Card extends BaseEntity{
         this.card_number = STR."6219\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}";
         this.bank_id = bank_id;
         this.user_id = user_id;
+    }
+    public Card(String name, Long bank_id, Long user_id,Account account) {
+        this.name = name;
+        this.card_number = STR."6219\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}\{random.nextInt(9)}";
+        this.bank_id = bank_id;
+        this.user_id = user_id;
+        this.account = account;
     }
 
     public Card(Long id, String name) {
@@ -28,6 +36,10 @@ public class Card extends BaseEntity{
         this.card_number = card_number;
         this.bank_id = bank_id;
         this.user_id = user_id;
+    }
+
+    public Account getAccount() {
+        return account;
     }
 
     public String getName() {

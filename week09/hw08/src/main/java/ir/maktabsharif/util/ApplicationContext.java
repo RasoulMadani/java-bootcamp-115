@@ -14,12 +14,16 @@ import ir.maktabsharif.service.account.AccountService;
 import ir.maktabsharif.service.account.AccountServiceImpl;
 import ir.maktabsharif.service.auth.AuthService;
 import ir.maktabsharif.service.auth.AuthServiceImpl;
+import ir.maktabsharif.service.bank.BankService;
+import ir.maktabsharif.service.bank.BankServiceImpl;
 import ir.maktabsharif.service.card.CardService;
 import ir.maktabsharif.service.card.CardServiceImpl;
 import ir.maktabsharif.service.report.ReportService;
 import ir.maktabsharif.service.report.ReportServiceImpl;
 import ir.maktabsharif.service.transaction.TransactionService;
 import ir.maktabsharif.service.transaction.TransactionServiceImpl;
+import ir.maktabsharif.service.user.UserService;
+import ir.maktabsharif.service.user.UserServiceImpl;
 import ir.maktabsharif.util.menu.Menu;
 
 public class ApplicationContext {
@@ -36,14 +40,18 @@ public class ApplicationContext {
 
     static {
         UserRepository userRepository = new UserRespositoryImpl();
-        AuthService authService = new AuthServiceImpl(userRepository);
-
-        CardRepository cardRepository = new CardRepositoryImpl();
-        BankRepository bankRepository = new BankRepositoryImpl();
-        CardService cardService = new CardServiceImpl(cardRepository, bankRepository);
+        UserService userService = new UserServiceImpl(userRepository);
+        AuthService authService = new AuthServiceImpl(userService);
 
         AccountRepository accountRepository = new AccountRepositoryImpl();
         AccountService accountService = new AccountServiceImpl(accountRepository);
+
+        CardRepository cardRepository = new CardRepositoryImpl();
+        BankRepository bankRepository = new BankRepositoryImpl();
+        BankService bankService = new BankServiceImpl(bankRepository);
+        CardService cardService = new CardServiceImpl(cardRepository, bankService,accountService);
+
+
 
         TransactionRepository transactionRepository = new TransactionRepositoryImpl();
         TransactionService transactionService = new TransactionServiceImpl(transactionRepository, cardService, accountService);

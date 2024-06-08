@@ -3,29 +3,29 @@ package ir.maktabsharif.service.auth;
 import ir.maktabsharif.entity.BaseEntity;
 import ir.maktabsharif.entity.User;
 import ir.maktabsharif.repository.user.UserRepository;
+import ir.maktabsharif.service.user.UserService;
 
 public class AuthServiceImpl implements AuthService {
-    private final UserRepository repository;
+    private final UserService userService;
 
-    public AuthServiceImpl(UserRepository repository) {
-        this.repository = repository;
+    public AuthServiceImpl(UserService userService) {
+        this.userService = userService;
     }
 
     @Override
     public User login(String username, String password) {
-        return repository.findByUsernameAndPassword(username, password);
+        return userService.login(username, password);
     }
 
     @Override
     public boolean register(String username, String password) {
         User user = new User(username, password);
-        BaseEntity user1 = repository.save(user);
-        return user1 != null;
+        return userService.register(user);
     }
 
     @Override
     public boolean checkExistUsername(String username) {
-        return repository.checkExistUsername(username);
+        return userService.checkExistUsername(username);
 //        sendSms
     }
 

@@ -21,30 +21,21 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Transaction cardToCard(String destinationCard, double amount, Long user_id) {
+    public Transaction cardToCard(Long user_id, String destinationCard, double amount) {
 
         Account accountOrigin = accountService.findAccountByUserId(user_id);
         Account accountDestination = accountService.findAccountByCardNumber(destinationCard);
+        //  TODO add message fo not found account;
 
         if (amount > 15000000) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.REQULAR, "amount out of bound");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.REQULAR, "amount out of bound");
         }
 
-        CalculatorFeed calculatorFeed = new CalculatorFeed(amount, TransactionType.REQULAR);
-        double feed = calculatorFeed.calculate();
+        double feed = CalculatorFeed.calculate(amount, TransactionType.REQULAR);
+
 
         if (accountOrigin.getBalance() < amount + feed) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.REQULAR, "balance not exist");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.REQULAR, "balance not exist");
         }
 
 
@@ -59,30 +50,29 @@ public class TransactionServiceImpl implements TransactionService {
         return null;
     }
 
+    private Transaction getFaildTransaction(Account accountOrigin, Account accountDestination, double amount, TransactionType reqular, String balance_not_exist) {
+        Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, reqular, balance_not_exist);
+        boolean inserted = transactionRepository.insertTransactionToDB(transaction);
+        if (inserted) {
+            return transaction;
+        }
+        return null;
+    }
+
     @Override
     public Transaction payaIndividual(String destinationShabaNumber, double amount, Long user_id) {
         Account accountOrigin = accountService.findAccountByUserId(user_id);
         Account accountDestination = accountService.findAccountByShabaNumber(destinationShabaNumber);
 
         if (15000000 > amount || amount > 50000000) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.PAYA, "amount out of bound");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.PAYA, "amount out of bound");
         }
 
-        CalculatorFeed calculatorFeed = new CalculatorFeed(amount, TransactionType.PAYA);
-        double feed = calculatorFeed.calculate();
+        double feed = CalculatorFeed.calculate(amount, TransactionType.PAYA);
+
 
         if (accountOrigin.getBalance() < amount + feed) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.PAYA, "balance not exist");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.PAYA, "balance not exist");
         }
 
 
@@ -103,24 +93,14 @@ public class TransactionServiceImpl implements TransactionService {
         Account accountDestination = accountService.findAccountByShabaNumber(destinationShabaNumber);
 
         if (50000000 > amount || amount > 200000000) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.SATNA, "amount out of bound");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.SATNA, "amount out of bound");
         }
 
-        CalculatorFeed calculatorFeed = new CalculatorFeed(amount, TransactionType.PAYA);
-        double feed = calculatorFeed.calculate();
+        double feed = CalculatorFeed.calculate(amount, TransactionType.PAYA);
+
 
         if (accountOrigin.getBalance() < amount + feed) {
-            Transaction transaction = new Transaction(accountOrigin, accountDestination, amount, 0, TransactionStatus.FAILED, TransactionType.SATNA, "balance not exist");
-            boolean inserted = transactionRepository.insertTransactionToDB(transaction);
-            if (inserted) {
-                return transaction;
-            }
-            return null;
+            return getFaildTransaction(accountOrigin, accountDestination, amount, TransactionType.SATNA, "balance not exist");
         }
 
 
@@ -192,8 +172,8 @@ public class TransactionServiceImpl implements TransactionService {
         for (String s : shabaNumbers) {
             accounts[index++] = accountService.findAccountByShabaNumber(s);
         }
-        CalculatorFeed calculatorFeed = new CalculatorFeed(amountDestination, TransactionType.PAYA_BATCH, shabaNumbers.length);
-        double feed = calculatorFeed.calculate();
+        double feed = CalculatorFeed.calculatePayaBatch(amountDestination, shabaNumbers.length);
+
         double amountOrigin = feed + shabaNumbers.length * amountDestination;
         double feedPerAccount = feed/accounts.length;
         boolean bole = accountService.payaBatch(accountOrigin, accounts, amountDestination, amountOrigin);

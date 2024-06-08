@@ -196,7 +196,7 @@ public class CardRepositoryImpl extends BaseEntityRepositoryImpl implements Card
     @Override
     public BaseEntity save(BaseEntity entity) {
         Card card = (Card) entity;
-        String insertQuery = STR."insert into \{getTableName()}(name,card_number,user_id,bank_id) values (?,?,?,?)";
+        String insertQuery = STR."insert into \{getTableName()}(name,card_number,user_id,bank_id,account_id) values (?,?,?,?,?)";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(insertQuery);
@@ -204,6 +204,7 @@ public class CardRepositoryImpl extends BaseEntityRepositoryImpl implements Card
             preparedStatement.setString(2, card.getCard_number());
             preparedStatement.setLong(3, card.getUser_id());
             preparedStatement.setLong(4, card.getBank_id());
+            preparedStatement.setLong(5, card.getAccount().getId());
             if (preparedStatement.executeUpdate() > 0) {
                 return card;
             }

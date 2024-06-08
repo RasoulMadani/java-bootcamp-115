@@ -118,6 +118,7 @@ public class AccountRepositoryImpl extends BaseEntityRepositoryImpl implements A
         } catch (SQLException e) {
             try {
                 connection.rollback();
+                connection.setAutoCommit(true);
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
@@ -216,6 +217,12 @@ public class AccountRepositoryImpl extends BaseEntityRepositoryImpl implements A
             connection.setAutoCommit(true);
             return true;
         } catch (SQLException e) {
+            try {
+                connection.rollback();
+                connection.setAutoCommit(true);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
             throw new RuntimeException(e);
         }
     }

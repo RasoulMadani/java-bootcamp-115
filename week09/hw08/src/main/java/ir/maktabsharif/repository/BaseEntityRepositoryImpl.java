@@ -40,7 +40,6 @@ public abstract class BaseEntityRepositoryImpl implements BaseEntityRespository 
             );
             ResultSet resultSet = preparedStatement.executeQuery();
             BaseEntity[] baseEntities = new BaseEntity[(int) count()];
-            System.out.println(count() + " " + getFindAllQuery());
             int arrayIndex = 0;
             while (resultSet.next()) {
                 baseEntities[arrayIndex++] = mapResultSetToBaseEntity(resultSet);

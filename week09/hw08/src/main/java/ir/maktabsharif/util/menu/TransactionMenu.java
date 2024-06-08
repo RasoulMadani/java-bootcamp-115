@@ -1,13 +1,9 @@
 package ir.maktabsharif.util.menu;
 
-import ir.maktabsharif.entity.BaseEntity;
 import ir.maktabsharif.entity.Transaction;
 import ir.maktabsharif.entity.User;
-import ir.maktabsharif.enums.TransactionStatus;
-import ir.maktabsharif.service.card.CardService;
 import ir.maktabsharif.service.transaction.TransactionService;
 
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -144,7 +140,7 @@ public class TransactionMenu {
         String destinationCard = scanner.next();
         System.out.println("Enter amount to transfer :");
         double amount = scanner.nextDouble();
-        Transaction cardToCard = transactionService.cardToCard(destinationCard, amount, token.getId());
+        Transaction cardToCard = transactionService.cardToCard(token.getId(), destinationCard, amount);
         if (cardToCard == null) {
             System.out.println("something went wrong !");
         }else {

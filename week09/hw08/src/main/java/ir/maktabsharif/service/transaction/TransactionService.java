@@ -3,10 +3,8 @@ package ir.maktabsharif.service.transaction;
 import ir.maktabsharif.entity.BaseEntity;
 import ir.maktabsharif.entity.Transaction;
 
-import java.sql.SQLException;
-
 public interface TransactionService {
-    Transaction cardToCard(String destinationCard, double amount, Long user_id) ;
+    Transaction cardToCard(Long user_id, String destinationCard, double amount) ;
 
     Transaction payaIndividual(String destinationShabaNumber, double amount, Long user_id);
 
