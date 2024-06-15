@@ -18,7 +18,7 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public CartItem findSpecialProductInCart(Cart cart, Product product) {
+    public CartItem findProductInCart(Cart cart, Product product) {
         return repository.findSpecialProductInCart(cart, product);
     }
 
@@ -43,6 +43,7 @@ public class CartItemServiceImpl implements CartItemService {
                     return repository.deleteById(cartItem.getId());
                 }
             }
+            // else for don't find product
             return false;
         } catch (SQLException e) {
             throw new RuntimeException(e);

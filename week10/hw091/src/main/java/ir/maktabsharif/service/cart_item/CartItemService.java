@@ -7,7 +7,7 @@ import ir.maktabsharif.entity.Product;
 public interface CartItemService {
     boolean addItemToCart(CartItem cartItem);
 
-    CartItem findSpecialProductInCart(Cart cart, Product product);
+    CartItem findProductInCart(Cart cart, Product product);
 
     boolean increaseProductCountInCart(CartItem cartItem);
 

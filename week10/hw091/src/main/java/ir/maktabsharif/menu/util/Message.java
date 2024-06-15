@@ -1,6 +1,7 @@
 package ir.maktabsharif.menu.util;
 
 public class Message {
+    // TODO change this with collections ;
 
     private static final String inputMessage = "pls enter %S";
     private static final String existMessage = "%S is already exist";

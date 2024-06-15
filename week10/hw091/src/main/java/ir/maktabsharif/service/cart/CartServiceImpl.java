@@ -39,7 +39,7 @@ public class CartServiceImpl implements CartService {
                    return cartItemService.addItemToCart(cartItem);
                 }
             } else {
-                CartItem cartItem = cartItemService.findSpecialProductInCart(cart, product);
+                CartItem cartItem = cartItemService.findProductInCart(cart, product);
                 if (cartItem != null) {
                     return cartItemService.increaseProductCountInCart(cartItem);
                 }else {
@@ -80,6 +80,7 @@ public class CartServiceImpl implements CartService {
           price = cartItem.getProduct().getPrice();
           discountAmount = cartItem.getDiscount().getAmount();
           discountType = cartItem.getDiscount().getType();
+          // TODO change one line of if
           if(discountType == DiscountType.PERCENTAGE){
               productDiscount = (price * discountAmount /100) * cartItem.getCount();
               productPrice = price * cartItem.getCount() - productDiscount;
