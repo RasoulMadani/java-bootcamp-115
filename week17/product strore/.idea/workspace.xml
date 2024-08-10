@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6aa25c3b-e5b0-4baf-9d06-d2b360c8d21a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Q5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/collections/src/Stream1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/hw10/src/q01/AnagramChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/hw10/src/q02/TreeSetExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/hw10/src/q03/RemoveInvalidPairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/hw10/src/q04/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week11/thred/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week13/stream/src/one/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week14/hw14/src/main/java/Q1/LambdaUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week14/hw14/src/main/java/Q1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week14/hw14/src/main/java/Q2/Q1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week14/hw14/src/main/java/Q2/Q2.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2jobo2dtg9HTJ94rgh004TV3fqa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="product strore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="product strore" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aa25c3b-e5b0-4baf-9d06-d2b360c8d21a" name="Changes" comment="" />
+      <created>1722056548014</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722056548014</updated>
+    </task>
+    <servers />
+  </component>
+</project>
